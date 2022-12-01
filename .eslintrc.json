@@ -1,0 +1,67 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "import"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ],
+        "key-spacing": "error",
+        "keyword-spacing": "error",
+        "no-case-declarations": "off",
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error",
+                    "assert"
+                ]
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2
+            }
+        ],
+        "one-var": ["error", "never"],
+        "default-case": "error",
+        "comma-spacing": "error",
+        "arrow-parens": "off",
+        "quotes": [
+            "error",
+            "single",
+            { "allowTemplateLiterals": true }
+        ],
+        "import/no-default-export": "error",
+        "eol-last": "error",
+        "indent": ["error", 2, {
+            "SwitchCase": 1,
+            "ignoredNodes": [
+                "JSXElement",
+                "TemplateElement"
+            ]
+        }]
+    }
+}
