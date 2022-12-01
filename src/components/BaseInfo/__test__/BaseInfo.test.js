@@ -29,7 +29,7 @@ describe("BaseInfo", () => {
 
     it("image should not be rendered when imageURL prop is empty", () => {
         render(<BaseInfo title={"Title"} imageURL={""} />);
-        const image = screen.getByRole("img");
+        const image = screen.queryByRole("img");
         expect(image).not.toBeInTheDocument();
     });
 });
