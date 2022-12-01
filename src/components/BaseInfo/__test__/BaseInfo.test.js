@@ -24,7 +24,6 @@ describe('BaseInfo', () => {
     render(<BaseInfo title={'Title'} imageURL={'https://example.com/image.jpg'} />);
     const image = screen.getByRole('img');
     expect(image).toHaveAttribute('src', 'https://example.com/image.jpg');
-
   });
 
   it('image should not be rendered when imageURL prop is empty', () => {
