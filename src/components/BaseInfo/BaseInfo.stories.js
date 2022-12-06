@@ -5,9 +5,6 @@ import { BaseInfo } from './BaseInfo';
 export default {
   title: 'Example/BaseInfo',
   component: BaseInfo,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 };
 
 const Template = (args) => <BaseInfo {...args} />;
