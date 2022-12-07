@@ -22,6 +22,7 @@ describe('Comment', () => {
     const author = screen.getByText(/nickname/i);
     expect(author).toBeInTheDocument();
   });
+  
   it('should render text passed into text prop', () => {
     render(<Comment author={'nickname'} text={'text of the comment'} time={1670171076} />);
     const text = screen.getByText(/text of the comment/i);
