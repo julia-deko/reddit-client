@@ -3,43 +3,34 @@ import { TiArrowUpOutline,
   TiArrowUpThick,
   TiArrowDownOutline,
   TiArrowDownThick } from 'react-icons/ti';
+import { Arrow } from './Arrow';
 
 export function Votes({ score }) {
-  const [ voteValue, setVoteValue ] = useState('default');
+  const [ voteValue, setVoteValue ] = useState(0);
 
   const onHandleVote = (newValue) => {
     if (newValue === voteValue) {
       setVoteValue(0);
-    } else if (newValue === 1) {
-      setVoteValue(1);
     } else {
-      setVoteValue(-1);
+      setVoteValue(newValue);
     }
-  };
-
-  const renderUpVote = () => {
-    if (voteValue === 1) {
-      return <TiArrowUpThick />
-    }
-    return <TiArrowUpOutline />
-  };
-
-  const renderDownVote = () => {
-    if (voteValue === -1) {
-      return <TiArrowDownThick /> 
-    }
-    return <TiArrowDownOutline />
   };
 
   return (
     <div>
-      <button onClick={() => onHandleVote(1)}>
-        {renderUpVote()}
-      </button>
+      <Arrow 
+        onClick={() => onHandleVote(1)} 
+        icon={TiArrowUpOutline} 
+        activeIcon={TiArrowUpThick} 
+        active={voteValue === 1} 
+      />
       <p>{score}</p>
-      <button onClick={() => onHandleVote(-1)}>
-        {renderDownVote()}
-      </button>
+      <Arrow 
+        onClick={() => onHandleVote(-1)} 
+        icon={TiArrowDownOutline} 
+        activeIcon={TiArrowDownThick} 
+        active={voteValue === -1} 
+      />
     </div>
   );
 }
