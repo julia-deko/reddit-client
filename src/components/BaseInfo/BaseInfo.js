@@ -1,14 +1,15 @@
 import React from 'react';
+import { Title, Image, ImageContainer } from './BaseInfoStyles';
 
 export function BaseInfo({ title, imageURL }) {
   return (
     <div>
       <div>
-        <h2>{title}</h2>
+        <Title>{title}</Title>
       </div>
-      <div>
-        {imageURL ? <img src={imageURL} /> : ''}
-      </div>
+      <ImageContainer>
+        {imageURL ? <Image src={imageURL} /> : ''}
+      </ImageContainer>
     </div>
   )
 }

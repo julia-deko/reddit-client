@@ -1,15 +1,17 @@
 import React from 'react';
 import moment from 'moment';
+import { TiMessage } from 'react-icons/ti';
+import { FooterWrapper, Author, Comments } from './FooterStyles';
 
 export function Footer({ author, time, commentsAmount }) {
   return (
-    <div>
-      <span>{author}</span>
+    <FooterWrapper>
+      <Author>{author}</Author>
       <span>{moment.unix(time).fromNow()}</span>
-      <span>
-        <button>Comments</button>
+      <Comments>
+        <TiMessage />
         {commentsAmount}
-      </span>
-    </div>
+      </Comments>
+    </FooterWrapper>
   );
 }
