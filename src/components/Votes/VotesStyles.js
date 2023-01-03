@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Colors } from '../../common/constants/colors';
 
 export const VotesContainer = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ export const VotesContainer = styled.div`
 
 export const VotesScore = styled.p`
   font-weight: bold;
-  color: #717171;
+  color: ${Colors.text};
   margin: 0;
   font-size: 16px;
 `;

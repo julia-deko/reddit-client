@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { Colors } from '../../common/constants/colors';
 
 export const Title = styled.h2`
-  color: #444;
+  color: ${Colors.header};
   margin: 0;
   margin-bottom: 16px;
   font-weight: 700;
@@ -11,7 +12,7 @@ export const Title = styled.h2`
 export const Image = styled.img`
   width: 100%;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: inherit;
 `;
 
 export const ImageContainer = styled.div`
