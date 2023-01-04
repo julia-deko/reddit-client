@@ -1,14 +1,15 @@
 import React from 'react';
 import moment from 'moment';
+import { CommentWrapper, Metadata, Author, Time } from './CommentStyles';
 
 export function Comment({ author, text, time }) {
   return (
-    <div>
-      <div>
-        <p>{author}</p>
-        <p>{moment.unix(time).fromNow()}</p>
-      </div>
+    <CommentWrapper>
+      <Metadata>
+        <Author>{author}</Author>
+        <Time>{moment.unix(time).fromNow()}</Time>
+      </Metadata>
       <p>{text}</p>
-    </div>
+    </CommentWrapper>
   );
 }
