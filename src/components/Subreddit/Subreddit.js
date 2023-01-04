@@ -1,5 +1,10 @@
 import React from 'react';
 
-export function Subreddit() {
-
+export function Subreddit({title, imageURL}) {
+  return (
+    <button>
+      <img src={imageURL} />
+      {title}
+    </button>
+  )
 }

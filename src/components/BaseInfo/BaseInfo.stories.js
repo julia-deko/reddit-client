@@ -12,5 +12,5 @@ const Template = (args) => <BaseInfo {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   title: 'What is Lorem Ipsum?',
-  imageURL: 'https://i.redd.it/pwpu54hobi3a1.jpg'
+  imageURL: 'https://i.redd.it/pwpu54hobi3a1.jpg',
 };
