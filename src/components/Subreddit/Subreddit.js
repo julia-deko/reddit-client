@@ -1,10 +1,11 @@
 import React from 'react';
+import { Icon, SubredditButton } from './SubredditStyles';
 
 export function Subreddit({title, imageURL}) {
   return (
-    <button>
-      <img src={imageURL} />
+    <SubredditButton>
+      <Icon src={imageURL} />
       {title}
-    </button>
+    </SubredditButton>
   )
 }
