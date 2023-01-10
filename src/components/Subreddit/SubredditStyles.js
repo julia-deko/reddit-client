@@ -13,7 +13,7 @@ export const SubredditButton = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  color: ${Colors.text_secondary};
+  color: ${Colors.textSecondary};
   font-weight: 600;
   cursor: pointer;
   width: 100%;
