@@ -19,4 +19,7 @@ export const SubredditButton = styled.button`
   width: 100%;
   padding: 16px;
   border-radius: 8px;
+  &:hover {
+    background-color: ${Colors.onHover};
+  }
 `;
