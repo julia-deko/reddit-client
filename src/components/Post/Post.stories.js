@@ -15,5 +15,5 @@ Primary.args = {
   imageURL: 'https://i.redd.it/pwpu54hobi3a1.jpg',
   author: 'waz',
   time: 1670171076,
-  commentsAmount: 99
+  commentsAmount: 99,
 };
