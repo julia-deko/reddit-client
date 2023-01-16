@@ -5,5 +5,6 @@ export const Colors = {
   author: '#3d5af1',
   textSecondary: '#6f6f6f',
   onHover: 'rgba(0,0,0,0.06)',
-  postBackground: '#fff',
+  backgroundSecondary: '#fff',
+  inputBackground: '#f3f3f3',
 };
