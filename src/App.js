@@ -1,18 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import { PostList } from './components/PostList/PostList';
+import { useQuery } from '@tanstack/react-query';
+import { SubredditsList } from './components/SubredditsList/SubredditsList';
+
+function getPosts() {
+  return fetch('https://www.reddit.com/r/pics/.json')
+    .then(response => response.json())
+    .then(postsData => {
+      return postsData.data.children.map(x => x.data);
+    });
+}
+
+function getSubreddits() {
+  return fetch('https://www.reddit.com/subreddits.json')
+    .then(response => response.json()
+      .then(subredditsData => subredditsData.data.children.map(x => x.data)));
+}
 
 export function App() {
+  const postsQuery = useQuery({
+    queryKey: ['posts'],
+    queryFn: getPosts,
+  });
+  const subredditsQuery = useQuery({
+    queryKey: ['subreddits'],
+    queryFn: getSubreddits,
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      { postsQuery.isSuccess ? <PostList posts={postsQuery.data}/> : <h1>Loading...</h1>}
+      { subredditsQuery.isSuccess ? <SubredditsList subreddits={subredditsQuery.data}/> : <h1>Loading...</h1> }
     </div>
   );
 }
