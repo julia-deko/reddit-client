@@ -12,7 +12,7 @@ function getPosts() {
     });
 }
 
-function getReddits() {
+function getSubreddits() {
   return fetch('https://www.reddit.com/subreddits.json')
     .then(response => response.json()
       .then(subredditsData => subredditsData.data.children.map(x => x.data)));
@@ -25,7 +25,7 @@ export function App() {
   });
   const subredditsQuery = useQuery({
     queryKey: ['subreddits'],
-    queryFn: getReddits,
+    queryFn: getSubreddits,
   });
   return (
     <div className="App">
